@@ -1,0 +1,7 @@
+--1 lab
+--Задание 1:
+X::(([Double],[Bool]),[Integer])
+x=(([2.75,3.5],[True,False]),[12,201])
+--Задание 2:
+isParallel:: (Double,Double)->(Double,Double)->(Double,Double)->(Double,Double)->Bool
+isParallel a b c d = (fst b - fst a)/(fst d - fst c)==(snd b - snd a)/(snd d - snd c) 

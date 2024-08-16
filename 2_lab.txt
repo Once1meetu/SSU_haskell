@@ -1,0 +1,59 @@
+--lab 2
+--part 1
+
+-- task 1
+natural:: Int->[Int]
+natural 1 = [1]
+natural n = natural (n-1) ++ [n]
+
+--task 2
+natural_odd::Int->[Int]
+natural_odd 1 = [1]
+natural_odd n = natural_odd(n-1)++[2n-1]
+
+-- task 3
+natural_even::Int->[Int]
+natural_even 1 = [2]
+natural_even n = natural_even(n-1)++[2n]
+
+--task 4
+n_square::Int->[Int]
+n_square 1 = [1]
+n_square n = n_square(n-1)++[n*n]
+
+--task 5
+factorial::Int->Int
+factorial 1 = 1
+factorial n = factorial(n-1)*n
+line_of_factorials::Int->[Int]
+line_of_factorials 1 = [1]
+line_of_factorials n = line_of_factorials (n-1) ++ [factorial n]
+
+--task 6
+deg::Int->[Int]
+deg 1 = [2]
+deg n = deg(n-1)++[2^n]
+
+--task 7
+triangle::Int->[Int]
+triangle 1 = [1]
+triangle n = triangle (n-1) ++ [n*(n+1)/2]
+
+--task 8
+pyramid::Int->Int
+pyramid 1 = 1
+pyramid n = n*(n+1)/2 + pyramid(n-1)
+line_of_pyramid::Int->[Int]
+line_of_pyramid 1 = [1]
+line_of_pyramid n = line_of_pyramid (n-1)++[pyramid n]
+
+--part 2
+
+--task 6
+removeOdd [] = []
+removeOdd (n:ns) = if even n than n:removeOdd ns else removeOdd ns
+
+--task 11
+substitute :: Char -> Char -> String -> String
+substitute a b "" = ""
+substitute a b c = if head c == a than b ++ substitute(a b tail(c)) else head c ++ substitute(a b tail(c))
